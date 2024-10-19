@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Us - CCSC{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'styles/about.css' %}" />
+<link rel="stylesheet" href="{% static 'styles/contact.css' %}" />
+{% endblock link %}
+
+{% block container %}
+  <main>
+    <h1>Post Page</h1>
+    <h3>The value in the url is {{pk}}</h3>
+  </main>
+{% endblock container %}

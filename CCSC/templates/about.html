@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Us - CCSC{% endblock title %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'styles/about.css' %}" />
+<link rel="stylesheet" href="{% static 'styles/contact.css' %}" />
+{% endblock link %}
+
+{% block container %}
+  <main>
+    <section class="about-section">
+      <div class="about-content">
+        <h1>Central Creative Science Club</h1>
+        <p>Welcome to the Central Creative Science Club (CCSC) – where curiosity meets innovation, and where aspiring minds like yours come together to explore the frontiers of science, technology, and creativity. I'm Saifur Rahman Udoy, the proud founder of this pioneering venture, and it's an honor to introduce you to the essence of our club.</p>
+        <p>Here, at Central Creative College, we believe that the pursuit of knowledge is a journey that knows no bounds. CCSC embodies this belief by offering a platform that transcends conventional learning. As the leader of this intellectual haven, I am driven by a passion to foster a community where science enthusiasts can thrive, experiment, and bring their wildest ideas to life.</p>
+        <p>Central Creative Science Club isn't just a name; it's a promise to inspire and nurture. Our club was conceived with the goal of harnessing the power of collective intellect to create something truly remarkable. We're not just another science club – we're a vibrant hub of inquisitive minds who dare to dream big and act on those dreams.</p>
+        <p>One of our core aspirations is to fuel the flames of innovation through hands-on projects. Our members engage in a diverse array of projects spanning various scientific domains – from cutting-edge technology to fundamental discoveries. Through these projects, we endeavor to bridge the gap between theory and practice, turning abstract ideas into tangible solutions that impact the world around us.</p>
+        <p>But that's not all. CCSC isn't just about insular exploration; we're committed to taking our passion to a broader stage. Every year, we eagerly participate in the city's prestigious science fair. It's an opportunity for us to showcase the culmination of our efforts, share our discoveries, and contribute to the wider scientific discourse. The thrill of competition, the joy of discovery, and the satisfaction of making a meaningful contribution – these are the experiences that define our journey.</p>
+        <p>We firmly believe that making projects isn't just about building prototypes; it's about fostering creativity, honing problem-solving skills, and cultivating a mindset that thrives on challenges. As technology evolves, so does our club's commitment to stay at the forefront of innovation. Whether it's experimenting with emerging technologies, exploring interdisciplinary collaborations, or delving into the uncharted territories of science, CCSC is the launchpad for your aspirations.</p>
+      </div>
+    </section>
+    <section>
+      {% for feature in features %}
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title">{{feature.id}}</h6>
+          <h5 class="card-title">{{feature.name}}</h5>
+          <p class="card-text">{{feature.details}}</p>
+          {% if feature.is_bool == True %}
+          <p>This feature is true</p>
+          {% elif feature.is_bool == False %}
+          <p>This feature is false</p>
+          {% else %}
+          <p>No feature found</p>
+          {% endif %}
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        {% if feature.name == 'Quick' %}
+        <p>This feature says our site is quick</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </section>
+    {% include 'footer.html' %}
+  </main>
+{% endblock container %}

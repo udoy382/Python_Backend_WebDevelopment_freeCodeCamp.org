@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+::selection{
+    color: #023019;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.right-items ul li a{
+    color: #22996b;
+}
+
+.home-page-header{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../images/img3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.left-items{
+    padding: 1rem;
+}
+
+.right-items ul{
+    display: flex;
+}
+
+.right-items ul li{
+    padding: 1rem;
+}
+
+.header-text{
+    text-align: center;
+    padding-top: 15rem;
+    color: #22996b;
+}
+
+.join-btn a{
+    border: 2px solid #22996b;
+    padding: 0.2rem 1rem;
+}
+
+.left-items h3{
+    color: #22996b;
+}
+
+.right-items ul li a:hover{
+    color: #023019;
+}
+
+.right-items span{
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0.3rem 2rem;
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #22996b;
+    color: #fff;
+  }
+
+/* first section  */
+
+.first-section{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fs-left{
+    height: 50vh;
+    width: 50%;
+    padding: 0 2rem;
+    color: #22996b;
+}
+
+.fs-left p{
+    line-height: 1.5rem;
+}
+
+.fs-right{
+    height: 50vh;
+    width: 50%;
+}
+
+
+/* second section */
+
+.second-section{
+    padding: 20rem 2rem 2rem 2rem;
+    background-color: #ebf5f1;
+    color: #22996b;
+}
+
+.second-section .card-header img{
+    width: 15vw;
+}
+
+.card{
+    border: 2px solid #22996b;
+    height: 35rem;
+    width: 16rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card .card-footer h4{
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}

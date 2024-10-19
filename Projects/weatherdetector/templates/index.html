@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .search-bar form {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #location-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #search-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #search-button:hover {
+            background-color: #0056b3;
+        }
+
+        .weather-info {
+            text-align: center;
+        }
+
+        .weather-data {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .weather-data span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Detector</h1>
+        <div class="search-bar">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="text" id="location-input" name="city" placeholder="Enter location...">
+                <button id="search-button">Search</button>
+            </form>
+        </div>
+        {% if data.country_code %}
+        <div class="weather-info">
+            <div class="weather-data">City: <span id="coordinates"></span>{{city}}</div>
+            <div class="weather-data">Country Code: <span id="coordinates"></span>{{data.country_code}}</div>
+            <div class="weather-data">Coordinates: <span id="coordinates">{{data.coordinate}}</span></div>
+            <div class="weather-data">Temperature: <span id="temperature">{{data.temp}}</span> °C</div>
+            <div class="weather-data">Pressure: <span id="pressure">{{data.pressure}}</span> hPa</div>
+            <div class="weather-data">Humidity: <span id="humidity">{{data.humidity}}</span>%</div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

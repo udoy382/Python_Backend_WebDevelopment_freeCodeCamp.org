@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block container %}
+
+<h1>Login Now</h1>
+{% for message in messages %}
+<h3>{{message}}</h3>
+{% endfor %}
+{% for message in messages %}
+<h3>{{message}}</h3>
+{% endfor %}
+<form action="login" method="post">
+    {% csrf_token %}
+    <label for="username">Username</label><br>
+    <input type="text" name="username" id="username"><br>
+    <label for="password">Password</label><br>
+    <input type="password" name="password" id="password"><br>
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock container %}

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Central Creative Science Club{% endblock title %}
+
+{% block container %}
+<header class="home-page-header">
+    <nav>
+        <div class="left-items">
+            <h3>CCSC</h3>
+        </div>
+        <div class="right-items">           
+            <span onclick="myFunction()">&#9776;</span>
+            <ul id="menu" class="nav-list">
+                <li>
+                    <a href="{% url 'index' %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'about' %}">About</a>
+                </li>
+                <li>
+                    <a href="{% url 'contact' %}">Contact</a>
+                </li>
+                <li class="join-btn">
+                    <a href="#">Join Club</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="join-btn">
+                    <a href="logout">Logout</a>
+                </li>
+                {% else %}
+                <li class="join-btn">
+                    <a href="/register">Sign-Up</a>
+                </li>
+                <li class="join-btn">
+                    <a href="/login">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div class="header-text">
+        {% if user.is_authenticated %}
+        <h1>Welcome, {{user.username}}</h1>
+        {% else %}
+        <h1>Welcome to the Central Creative Science Club!</h1>
+        <h1>Ignite Curiosity, Illuminate Minds</h1>
+        {% endif %}
+    </div>
+</header>
+    <main>
+        <section class="first-section">
+            <div class="fs-left">
+                <h1>Let's Work Together</h1>
+                <p>Join us in a journey of discovery and innovation. Our Science Club is a hub of exploration where curious minds gather to unravel the mysteries of the universe. From captivating science fairs that showcase groundbreaking experiments to engaging workshops that foster creativity, we are committed to nurturing a community of passionate learners. Explore the endless possibilities at the intersection of science and creativity with us. Let's push boundaries, spark new ideas, and shape the future together!</p>
+            </div>
+            <div class="fs-right">
+                <img src="{% static 'images/img4.png' %}" alt="science iamge">
+            </div>
+        </section>
+        <section class="second-section">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-header">
+                        <img src="{% static 'images/img1.png' %}" alt="card-1 image">
+                    </div>
+                    <div class="card-footer">
+                        <h4>Tech Innovations</h4>
+                        <p>Dive into the ever-evolving world of technology with our science club. From cutting-edge advancements in AI and robotics to the latest breakthroughs in renewable energy and nanotechnology, we're here to explore, learn, and innovate together. Join us to stay at the forefront of technological progress!</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="{% static 'images/img2.png' %}" alt="card-1 image">
+                    </div>
+                    <div class="card-footer">
+                        <h4>AI Marvels</h4>
+                        <p>Dive into the realm of Artificial Intelligence with our tech-savvy science club. Explore machine learning, neural networks, and natural language processing. Join us to create AI-powered projects that revolutionize industries, from chatbots enhancing customer experiences to predictive algorithms shaping future innovations.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="{% static 'images/img5.png' %}" alt="card-1 image">
+                    </div>
+                    <div class="card-footer">
+                        <h4>Robotics Revolution</h4>
+                        <p>Gear up for a hands-on journey through robotics! Our science club is all about building, programming, and competing with robots. From simple line-following bots to intricate humanoid designs, we're here to ignite your passion for robotics and automation while exploring the limitless possibilities they offer.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <img src="{% static 'images/img6.png' %}" alt="card-1 image">
+                    </div>
+                    <div class="card-footer">
+                        <h4>Virtual Reality Ventures</h4>
+                        <p>Step into the future with our Virtual Reality projects! Delve into the exciting world of VR technology, from immersive simulations to interactive storytelling. Our science club empowers you to create virtual experiences that push the boundaries of perception, entertainment, and education, all while shaping the way we interact with digital content.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    {% include 'footer.html' %}
+{% endblock container %}
